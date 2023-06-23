@@ -1,29 +1,29 @@
-名称:皮顿瓶服务器
+name: Python Flask Server
 
-关于:
-推动:
-分支机构:
--主要
+on:
+push:
+branches:
+- main
 
-工作岗位:
-建造和部署:
-最新运行:
+jobs:
+build-and-deploy:
+runs-on: ubuntu-latest
 
-步骤:
-名称:结帐代码
-用途:操作/结账@V2
+steps:
+- name: Checkout code
+uses: actions/checkout@v2
 
--名称:设置巨蛇
-用途:动作/动作/
-附有:
+- name: Set up Python
+uses: actions/setup-python@v2
+with:
 python-version: '3.x'
 
-名称:安装依赖项
+- name: Install dependencies
 run: |
-PIP安装-升级PIP
-PIP安装-R要求。Txt
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 
--名称:启动瓶服务器
+- name: Start Flask server
 run: |
-出口产品
-瓶运行----主机=0.0.0.0
+export FLASK_APP=app.py
+flask run --host=0.0.0.0
