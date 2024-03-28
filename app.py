@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string,render_template
 from jinja2 import Environment, escape
 from itsdangerous import json
 
@@ -47,6 +47,7 @@ def index():
             <input type="submit" value="计算">
         </form>
     ''')
+    return render_template('index.html',e=e)
 
 if __name__ == '__main__':
     app.run(debug=true)
