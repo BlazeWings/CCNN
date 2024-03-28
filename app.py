@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    e=request.form.get("abc")
     if request.method == 'POST':
         dl = float(request.form['dl'])
         pz = float(request.form['pz']) / 100
