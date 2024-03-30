@@ -3,28 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python in HTML</title>
+    <title>Flask App</title>
 </head>
 <body>
-    <h1>计算结果</h1>
-    <table>
-        <tr>
-            <th>周期</th>
-            <th>交易价格</th>
-        </tr>
-        {% for period, price in result %}
-        <tr>
-            <td>{{ period }}</td>
-            <td>{{ price }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    <a href="/">返回</a>
-    <form action="https://blazewings.github.io/CCNN/" method=["Post"]>
-        <input type="text" class="input" name="abc">
-        <input type="submit" value="666" class="input button">
+    <h1>Addition</h1>
+    <form action="/" method="post">
+        <input type="number" name="num1" placeholder="Number 1" required>
+        <input type="number" name="num2" placeholder="Number 2" required>
+        <button type="submit">Add</button>
     </form>
- <h2>{{e}}</h2>   
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
 </body>
 </html>
-
