@@ -9,7 +9,7 @@ def index():
         num2 = float(request.form['num2'])
         result = num1 + num2
         return render_template('index.html', result=result)
-    return render_template('index.html')
+   
 
 if __name__ == '__main__':
     app.run(debug=True)
