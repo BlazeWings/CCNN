@@ -1,13 +1,15 @@
-from flask import Flask, request, render_template_string,render_template
-
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-   
-     e=1
-    return render_template('index.html',e=e)
+    if request.method == 'POST':
+        num1 = float(request.form['num1'])
+        num2 = float(request.form['num2'])
+        result = num1 + num2
+        return render_template('index.html', result=result)
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=true)
+    app.run(debug=True)
