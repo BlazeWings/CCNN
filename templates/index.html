@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +6,14 @@
     <title>Flask App</title>
 </head>
 <body>
-    <h1>请输入大楼价格、品质加成、人工费和数量：</h1>
-    <form action="/result" method="post">
-        <label for="dl">大楼价格：</label>
-        <input type="number" id="dl" name="dl" required><br>
-        <label for="pz">品质加成：</label>
-        <input type="number" step="0.01" id="pz" name="pz" required><br>
-        <label for="rg">人工费：</label>
-        <input type="number" id="rg" name="rg" required><br>
-        <label for="sl">数量：</label>
-        <input type="number" id="sl" name="sl" required><br>
-        <button type="submit">提交</button>
+    <h1>Addition</h1>
+    <form action="https://blazewings.github.io/CCNN/" method="post">
+        <input type="number" name="num1" placeholder="Number 1" required>
+        <input type="number" name="num2" placeholder="Number 2" required>
+        <button type="submit">Add</button>
     </form>
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
 </body>
 </html>
